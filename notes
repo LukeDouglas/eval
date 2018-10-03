@@ -1,0 +1,32 @@
+Process 
+
+1) considered components
+2) generate basic express app with generator
+3) Create test
+4) Develop back end functions to redact text from strings, to stream text through pipes (maybe not nothing to break on)/ to load doc into memory from stream, to alter and rewrite doc, to stream to frontend
+5) Develop front end html and form post functions
+
+
+
+angular app with bootstrap.
+
+send doc to back end
+
+
+take stream and text. redact text return altered file.
+
+1) functions to break input into reg x searches
+2) function to redact strings from strings.
+3) function to stream txt files chuncked into pices by.\
+4) files to create tmp file and delete when done.
+5) overall to stream file and redact chuncks write to temp
+6) endpoint to extract file stream from request (may have to write to tmp), call above redactor and return file to front end
+
+
+1) front end form to send file to server with formpost.
+2) front end take response and generate a download ancor for user.
+
+
+problems
+1) replacing exact match only, added reg ex boundries
+2) deleting file after stream.
