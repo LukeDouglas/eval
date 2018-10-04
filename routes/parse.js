@@ -10,6 +10,8 @@ const { replaceStringInString, parseInputTextToStrings, createFile, deleteFile }
 /* GET home page. */
 router.post('/', upload.single('text'), async function (req, res, next) {
   let file = req.file
+  console.log(req.file)
+
   let input = parseInputTextToStrings(req.body.words)
   await createFile(`./${file.originalname}`, file.buffer)
   let read = fs.createReadStream(`./${file.originalname}`)
