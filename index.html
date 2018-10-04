@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Meltwater Evaluation</title>
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+  <div id = "head">
+      <p>CIA Redaction Tool</p>
+  </div>
+  <div class='app'>
+  <div class="container">
+     <div class="row">
+        <div class="col-25">
+           <label for="file">File</label>
+        </div>
+        <div class="col-75">
+           <input type="file" file-model="myFile" id="file" />
+        </div>
+     </div>
+     <div class="row">
+        <div class="col-25">
+           <label for="string">Redaction Clauses</label>
+        </div>
+        <div class="col-75">
+           <input type="text" id="string" name="string">
+        </div>
+     </div>
+     <div class="row">
+        <input type="submit" value="Submit" id = "submitFile">
+     </div>
+  </div> 
+</body>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+<script type="text/javascript" src="script.js"></script>
+</html>
+
+
+<!-- 
+Copyright 2017-2018 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->
