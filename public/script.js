@@ -9,7 +9,7 @@ $(document).ready(function () {
     // d = $("#add_new_product").serialize();
     $.ajax({
       type: 'POST',
-      url: 'http://localhost:3000/parser',
+      url: window.location.href+'parser',
       data: fdata,
       contentType: false,
       processData: false,
