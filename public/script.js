@@ -2,7 +2,6 @@ $(document).ready(function () {
   $('#submitFile').click(function (e) {
     e.preventDefault()
     var fdata = new FormData()
-
     fdata.append('words', $('#string').val())
 
     if ($('#file')[0].files.length > 0) { fdata.append('text', $('#file')[0].files[0]) }
@@ -20,6 +19,9 @@ $(document).ready(function () {
         link.href = window.URL.createObjectURL(blob)
         link.download = 'redacted_'+fileName
         link.click()
+      },
+      error: function (xhr, message) {
+        alert(message)
       }
     })
   })
