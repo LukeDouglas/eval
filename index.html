@@ -11,37 +11,43 @@
 </head>
 
 <body>
-  <div id = "head">
-      <p>CIA Redaction Tool</p>
-  </div>
   <div class='app'>
-  <div class="container">
-     <div class="row">
+    <div class="container">
+      <p class="row" id="header">CIA Redaction Tool</p>
+    </div>
+    <div class="container">
+      <div class="row">
         <div class="col-25">
-           <label for="file">File</label>
+          <label for="file">File</label>
         </div>
         <div class="col-75">
-           <input type="file" file-model="myFile" id="file" />
+          <input type="file" file-model="myFile" id="file" required />
         </div>
-     </div>
-     <div class="row">
+      </div>
+      <div class="row">
         <div class="col-25">
-           <label for="string">Redaction Clauses</label>
+          <label for="string">Redaction Clause</label>
         </div>
         <div class="col-75">
-           <input type="text" id="string" name="string">
+          <input type="text" id="string" name="string" required>
         </div>
-     </div>
-     <div class="row">
-        <input type="submit" value="Submit" id = "submitFile">
-     </div>
-  </div> 
+      </div>
+      <div class="row">
+        <input type="submit" value="Redact Text" id="submitFile">
+      </div>
+    </div>
+    <div class="container">
+      <p>This tool redacts phrases or words in a redact clause from an uploaded plain text document. It takes the following required inputs:</p>
+      <p><strong>Redaction Clause:</strong> String of keywords and phrases: a string of censored keywords and phrases separated by spaces or commas. Phrases will be enclosed in single or double quotes. Some examples: Hello world “Boston Red Sox” ‘Pepperoni Pizza’, ‘Cheese Pizza’, beer</p>
+      <p><strong>File:</strong> Plain text document to redact text from</p>
+      <p>Submission of the form will result in a download of redaction version of the file uploaded to the tool. File name will be redacted_ followed by the original file name</p>
+    </div>
+  </div>
 </body>
-<script
-  src="https://code.jquery.com/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
   crossorigin="anonymous"></script>
 <script type="text/javascript" src="script.js"></script>
+
 </html>
 
 
