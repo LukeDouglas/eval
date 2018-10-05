@@ -3,6 +3,8 @@ const fs = require('fs')
 const util = require('util')
 const writeFile = util.promisify(fs.writeFile)
 const unlinkFile = util.promisify(fs.unlink)
+
+/** ******************** String Functions ***********************************/
 // inputString - string - `String of keywords and phrases: a string of censored keywords and phrases separated by spaces or commas. Phrases will be enclosed in single or double quotes. Some examples: Hello world “Boston Red Sox”‘Pepperoni Pizza’, ‘Cheese Pizza’, beer`
 // returns - returns {words: [], phrases: [] }
 
@@ -41,7 +43,7 @@ const replaceStringInString = (textString, searchString, replaceValue) => {
   let result = textString.replace(re, replaceValue)
   return result
 }
-
+/** *****************File Functions**********************/
 const createFile = async (path, fileString) => {
   try {
     await writeFile(path, fileString)

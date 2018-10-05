@@ -1,11 +1,15 @@
-
 const express = require('express')
 const router = express.Router()
 const multer = require('multer')
 const upload = multer()
 const fs = require('fs')
 const es = require('event-stream')
-const { replaceStringInString, parseInputTextToStrings, createFile, deleteFile } = require('../supporting_functions.js')
+const {
+  replaceStringInString,
+  parseInputTextToStrings,
+  createFile,
+  deleteFile
+} = require('../supporting_functions.js')
 
 /* GET home page. */
 router.post('/', upload.single('text'), async function (req, res, next) {
@@ -13,7 +17,11 @@ router.post('/', upload.single('text'), async function (req, res, next) {
   console.log(req.file)
 
   let input = parseInputTextToStrings(req.body.words)
-  await createFile(`./${file.originalname}`, file.buffer)
+  try {
+    await createFile(`./${file.originalname}`, file.buffer)
+  } catch (e) {
+    res.status(400).send(e.message)
+  }
   let read = fs.createReadStream(`./${file.originalname}`)
   // let write = fs.createWriteStream('./testRedact')
 
